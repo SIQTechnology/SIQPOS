@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56825832-A0AF-496F-A2AD-E270B21543AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MemoKu.POS</RootNamespace>
+    <AssemblyName>MemoKu.POS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.0.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="MemoKu.POS.Components">
+      <HintPath>..\MemoKu.POS.Components\obj\Debug\MemoKu.POS.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\packages\structuremap.3.0.3.116\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\..\packages\structuremap.3.0.3.116\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\StructureMapConfig.cs" />
+    <Compile Include="Components\ColumnWidth.cs" />
+    <Compile Include="Components\DataProperyMapper.cs" />
+    <Compile Include="Components\GridPOS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\GridPOS.Designer.cs">
+      <DependentUpon>GridPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\IPOSGridItemStyle.cs" />
+    <Compile Include="Components\POSGridFooter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\POSGridFooter.Designer.cs">
+      <DependentUpon>POSGridFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\POSGridHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\POSGridHeader.Designer.cs">
+      <DependentUpon>POSGridHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\POSGridItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\POSGridItem.Designer.cs">
+      <DependentUpon>POSGridItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\POSPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\POSPanel.Designer.cs">
+      <DependentUpon>POSPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SimplePOSGridItemStyle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\LoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchPartView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SearchPartView.Designer.cs">
+      <DependentUpon>SearchPartView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Components\GridPOS.resx">
+      <DependentUpon>GridPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\POSGridHeader.resx">
+      <DependentUpon>POSGridHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SearchPartView.resx">
+      <DependentUpon>SearchPartView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemoKu.POS.Database\MemoKu.POS.Database.csproj">
+      <Project>{1ade5d84-e966-4c76-afb0-e9acd5808c44}</Project>
+      <Name>MemoKu.POS.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoKu.POS.Domain\MemoKu.POS.Domain.csproj">
+      <Project>{7f1b82df-d264-4a8f-9ffa-53a6855f503d}</Project>
+      <Name>MemoKu.POS.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoKu.POS.Mvc\MemoKu.POS.Mvc.csproj">
+      <Project>{46e0d080-ed0b-4f37-9ac3-44fc984717b2}</Project>
+      <Name>MemoKu.POS.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoKu.POS.Reporting\MemoKu.POS.Reporting.csproj">
+      <Project>{66740ab5-e278-4604-8c87-c37d5a59b515}</Project>
+      <Name>MemoKu.POS.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoKu.POS.Repositories\MemoKu.POS.Repositories.csproj">
+      <Project>{24595cd5-fe27-4a3d-a7c4-3e4813051082}</Project>
+      <Name>MemoKu.POS.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoKu.POS.Utils\MemoKu.POS.Utils.csproj">
+      <Project>{15043e06-e975-4aac-b10a-a768abad2d18}</Project>
+      <Name>MemoKu.POS.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

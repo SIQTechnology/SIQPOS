@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46E0D080-ED0B-4F37-9AC3-44FC984717B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MemoKu.POS.Mvc</RootNamespace>
+    <AssemblyName>MemoKu.POS.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\packages\structuremap.3.0.3.116\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\..\packages\structuremap.3.0.3.116\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context.cs" />
+    <Compile Include="Controller\ModeController.cs" />
+    <Compile Include="Exceptions\CompanyProfileNotFoundException.cs" />
+    <Compile Include="Informations\EndTransactionModeInfo.cs" />
+    <Compile Include="Informations\PaymentModeInfo.cs" />
+    <Compile Include="Informations\ScanModeInfo.cs" />
+    <Compile Include="Informations\SearchPartModeInfo.cs" />
+    <Compile Include="Informations\SelectItemModeInfo.cs" />
+    <Compile Include="Interface\IModeController.cs" />
+    <Compile Include="Interface\IModeInformation.cs" />
+    <Compile Include="Interface\ISearchPartView.cs" />
+    <Compile Include="Modes\ActionMode.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MainController.cs" />
+    <Compile Include="Interface\ILoginController.cs" />
+    <Compile Include="Interface\ILoginView.cs" />
+    <Compile Include="Interface\IMainController.cs" />
+    <Compile Include="Interface\IMainView.cs" />
+    <Compile Include="Modes\EndTransactionMode.cs" />
+    <Compile Include="Modes\PaymentMode.cs" />
+    <Compile Include="Modes\ScanMode.cs" />
+    <Compile Include="Modes\SearchPartMode.cs" />
+    <Compile Include="Modes\SelectItemMode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sessions\SessionHolder.cs" />
+    <Compile Include="Sessions\ShoppingCartSingleton.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemoKu.POS.Domain\MemoKu.POS.Domain.csproj">
+      <Project>{7f1b82df-d264-4a8f-9ffa-53a6855f503d}</Project>
+      <Name>MemoKu.POS.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoKu.POS.Reporting\MemoKu.POS.Reporting.csproj">
+      <Project>{66740ab5-e278-4604-8c87-c37d5a59b515}</Project>
+      <Name>MemoKu.POS.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoKu.POS.Utils\MemoKu.POS.Utils.csproj">
+      <Project>{15043e06-e975-4aac-b10a-a768abad2d18}</Project>
+      <Name>MemoKu.POS.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

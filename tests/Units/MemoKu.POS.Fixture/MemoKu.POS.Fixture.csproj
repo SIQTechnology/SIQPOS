@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC18D0EB-5AD4-4E0D-9CFD-B34B525F5E77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MemoKu.POS.Fixture</RootNamespace>
+    <AssemblyName>MemoKu.POS.Fixture</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\packages\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\packages\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexts\behave_like_shopping_cart_created.cs" />
+    <Compile Include="Contexts\behave_like_item_added.cs" />
+    <Compile Include="Contexts\behave_like_shopping_cart_has_been_created_by_tax.cs" />
+    <Compile Include="Contexts\behave_like_shopping_cart_has_been_created_by_tax_and_service_charge.cs" />
+    <Compile Include="Contexts\behave_like_item_added_by_tax_and_service_charge.cs" />
+    <Compile Include="when_add_three_item_with_discount_total.cs" />
+    <Compile Include="when_change_note.cs" />
+    <Compile Include="when_given_discount_total_by_percent.cs" />
+    <Compile Include="when_change_charge_by_nominal.cs" />
+    <Compile Include="when_change_discount_item_with_qty_2_by_percent.cs" />
+    <Compile Include="when_change_discount_item_by_nominal.cs" />
+    <Compile Include="when_change_discount_item_by_percent.cs" />
+    <Compile Include="when_change_charge_to_zero.cs" />
+    <Compile Include="when_change_charge_by_percent.cs" />
+    <Compile Include="when_add_three_item_if_shopping_cart_have_tax_and_charge.cs" />
+    <Compile Include="when_add_item_if_shopping_cart_have_tax_and_charge.cs" />
+    <Compile Include="when_add_item_if_shopping_cart_have_tax.cs" />
+    <Compile Include="when_change_pay_with_cash_but_too_Excessive.cs" />
+    <Compile Include="when_change_pay_with_cash_but_not_enough.cs" />
+    <Compile Include="when_change_pay_with_cash.cs" />
+    <Compile Include="when_change_price.cs" />
+    <Compile Include="when_decrease_quantity.cs" />
+    <Compile Include="when_delete_item.cs" />
+    <Compile Include="when_increase_quantity.cs" />
+    <Compile Include="when_add_item.cs" />
+    <Compile Include="when_add_three_item.cs" />
+    <Compile Include="when_change_quantity.cs" />
+    <Compile Include="when_create_shopping_cart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\MemoKu.POS.Domain\MemoKu.POS.Domain.csproj">
+      <Project>{7f1b82df-d264-4a8f-9ffa-53a6855f503d}</Project>
+      <Name>MemoKu.POS.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

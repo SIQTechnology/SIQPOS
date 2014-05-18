@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F1B82DF-D264-4A8F-9FFA-53A6855F503D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MemoKu.POS.Domain</RootNamespace>
+    <AssemblyName>MemoKu.POS.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregate\AutoNumber.cs" />
+    <Compile Include="Entities\ItemRemoved.cs" />
+    <Compile Include="Aggregate\ShoppingCart.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Exceptions\NoItemSelectedException.cs" />
+    <Compile Include="Exceptions\PaymentAmountNotEnoughException.cs" />
+    <Compile Include="Exceptions\PaymentAmountTooExcessiveException.cs" />
+    <Compile Include="Exceptions\ProductNotFoundException.cs" />
+    <Compile Include="IShoppingCartSingleton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IAutoNumberRepository.cs" />
+    <Compile Include="Repositories\ICurrencyRepository.cs" />
+    <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Repositories\IServiceChargeRepository.cs" />
+    <Compile Include="Repositories\ISessionRepository.cs" />
+    <Compile Include="Repositories\ITaxRepository.cs" />
+    <Compile Include="Services\AutoNumberGenerator.cs" />
+    <Compile Include="Services\SessionService.cs" />
+    <Compile Include="Services\ShoppingCartService.cs" />
+    <Compile Include="ValueObjects\Charge.cs" />
+    <Compile Include="ValueObjects\Currency.cs" />
+    <Compile Include="ValueObjects\Discount.cs" />
+    <Compile Include="ValueObjects\Payment.cs" />
+    <Compile Include="Entities\POSSession.cs" />
+    <Compile Include="ValueObjects\SessionState.cs" />
+    <Compile Include="ValueObjects\Summary.cs" />
+    <Compile Include="ValueObjects\Tax.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemoKu.POS.Utils\MemoKu.POS.Utils.csproj">
+      <Project>{15043e06-e975-4aac-b10a-a768abad2d18}</Project>
+      <Name>MemoKu.POS.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

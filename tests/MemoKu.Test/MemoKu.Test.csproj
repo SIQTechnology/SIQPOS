@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{195055B3-0C32-4502-9426-8F55747022E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MemoKu.Test</RootNamespace>
+    <AssemblyName>MemoKu.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\packages\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\packages\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\structuremap.3.0.3.116\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\..\packages\structuremap.3.0.3.116\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="context\test_base_mode.cs" />
+    <Compile Include="context\TestBase.cs" />
+    <Compile Include="context\TestBaseWithNoData.cs" />
+    <Compile Include="context\test_base_mode_with_no_data.cs" />
+    <Compile Include="Modes\Scan\context\behave_like_item_added.cs" />
+    <Compile Include="Modes\Scan\when_key_f2_pressed.cs" />
+    <Compile Include="Modes\Scan\when_key_delete_pressed.cs" />
+    <Compile Include="Modes\Scan\when_key_delete_press_but_no_item_selected.cs" />
+    <Compile Include="Modes\Scan\when_key_down_pressed.cs" />
+    <Compile Include="Modes\Scan\when_key_up_pressed.cs" />
+    <Compile Include="Modes\Scan\when_enter_key_press_for_decrease_expression.cs" />
+    <Compile Include="Modes\Scan\when_enter_key_press_for_increase_expression.cs" />
+    <Compile Include="Modes\Scan\when_add_item.cs" />
+    <Compile Include="Modes\Scan\when_add_item_with_no_data.cs" />
+    <Compile Include="Modes\Scan\when_enter_key_press_for_expression_but_no_item.cs" />
+    <Compile Include="Modes\Scan\when_key_up_press_but_no_item_selected.cs" />
+    <Compile Include="Start\when_start_pos.cs" />
+    <Compile Include="Start\when_start_pos_but_have_not_company_profile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MemoKu.POS.Domain\MemoKu.POS.Domain.csproj">
+      <Project>{7f1b82df-d264-4a8f-9ffa-53a6855f503d}</Project>
+      <Name>MemoKu.POS.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\MemoKu.POS.Mvc\MemoKu.POS.Mvc.csproj">
+      <Project>{46e0d080-ed0b-4f37-9ac3-44fc984717b2}</Project>
+      <Name>MemoKu.POS.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\MemoKu.POS.Reporting\MemoKu.POS.Reporting.csproj">
+      <Project>{66740ab5-e278-4604-8c87-c37d5a59b515}</Project>
+      <Name>MemoKu.POS.Reporting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,58 @@
+﻿<Window x:Class="MemoKu.POS.WPF.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SIQ POS" Height="245" Width="365" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="ToolWindow">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFE0E0E0"/>
+            <GradientStop Color="#FFEEEEEE" Offset="0.996"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0" Background="#0b82ac" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="170"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Britannic Bold" TextOptions.TextHintingMode="Animated" TextOptions.TextFormattingMode="Display" Margin="0,0,3,0" FontWeight="Bold">
+                <Label.Effect>
+                    <DropShadowEffect Color="#FFDADADA" BlurRadius="1" Direction="310" ShadowDepth="3" Opacity="0.5"/>
+                </Label.Effect> SIQ POS
+            </Label>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" FontSize="12" FontFamily="Tahoma">Name</Label>
+            <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" FontSize="12" FontFamily="Tahoma">Password</Label>
+            <Label Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">:</Label>
+            <Label Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">:</Label>
+            <TextBox Grid.Column="2" Grid.ColumnSpan="2" Name="txtUsername" Padding="2" Margin="3" ForceCursor="True"></TextBox>
+            <PasswordBox Grid.Column="2" Grid.ColumnSpan="2" Name="txtPassword" Grid.Row="1" Padding="2" Margin="3"/>
+            <Button Grid.Column="2" Grid.Row="3" IsCancel="True" Margin="5,2,5,2">Cancel</Button>
+            <Button Grid.Column="3" Grid.Row="2" Margin="4,31,6,5" Name="btnLogin" Click="btnLogin_Click" Grid.RowSpan="2">Login</Button>
+        </Grid>
+    </Grid>
+</Window>
